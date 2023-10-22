@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>Notes</title>
+  <link href="https://home.epimetheusgames.repl.co/assets/favicons/notesFavicon.png" rel="icon">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 99%;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #ebebff;
+      transition: 0.5s all ease-in;
+      cursor: url("../../../../assets/cursors/cur-default.png"), auto;
+    }
+
+    a,
+    button {
+      cursor: url("../../../../assets/cursors/cur-pointer.png"), pointer;
+    }
+
+    [title] {
+      cursor: url("../../../../assets/cursors/cur-help.png"), help;
+    }
+
+    .alignitems {
+      background-color: #292929;
+      border-radius: 100px;
+      width: 99%;
+    }
+
+    .alignitems {
+      display: flex;
+      align-items: center;
+    }
+
+    .alignitems img {
+      width: 240px;
+      height: 240px;
+      margin-left: 10px;
+    }
+
+    nav h1 {
+      color: #ffffff;
+      font-size: 90px;
+      margin-left: 10%;
+      font-family: "Bungee"; 
+      font-weight: 650;
+      letter-spacing: 7px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #ebebff;
+    }
+
+    button {
+      margin: 3px;
+      border: none;
+      outline: 2px outset #353535;
+      background-color: #353535;
+      color: #ebebff;
+      font-size: 18px;
+      font-family: sans-serif;
+      transition: all 0.4s ease-in;
+    }
+
+    button:hover {
+      outline: 2px outset #656565;
+    }
+
+    button:active {
+      outline: 2px inset #353535;
+    }
+
+    #savebutton {
+      height: 3%;
+      border-left: solid 1px #ebebff;
+      display: none;
+    }
+
+    .info {
+      font-size: 12px;
+      text-align: center;
+      width: 17px;
+      height: 17px;
+      border-style: solid;
+      border-width: 2px;
+      border-color: #ebebff;
+      border-radius: 17px;
+      line-height: 18px;
+    }
+
+    .buttonstd {
+      width: 30%;
+    }
+
+    .inbuttonstd {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .inbuttonstd button {
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 50px;
+      text-align: center;
+    }
+
+    #faketd1 {
+      width: 99%;
+    }
+
+    #faketd2 {
+      width: 50%;
+      padding: 7px;
+    }
+
+    #realtable {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #realtable tr {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    #realtable td {
+      padding: 3px;
+      font-size: 18px;
+    }
+
+    textarea {
+      background-color: #121212;
+      color: #ebebff;
+      resize: none;
+      font-family: sans-serif;
+      font-size: 18px;
+      width: 100%;
+      height: 97%;
+      border-color: #ebebff;
+      padding: 3px;
+      display: none;
+      cursor: url("../../../../assets/cursors/cur-text.png"), text;
+    }
+
+    #faketable {
+      border-style: none;
+      width: 100%;
+      height: 90%;
+    }
+
+    ::selection {
+      color: #161618;
+      background-color: #aaaaff;
+    }
+  </style>
+</head>
+
+<body onload="JavaSScript()" onbeforeunload="LocalStorageIt()">
+  <div class="alignitems">
+    <img src="https://home.epimetheusgames.repl.co/assets/favicons/logo.png" alt="Logo">
+    <nav>
+      <a href="https://home.epimetheusgames.repl.co/">
+        <h1>Epimetheus Notes</h1>
+      </a>
+    </nav>
+  </div>
+  <p></p>
+  <div class="alignitems" style="background-color: #121212; padding: 3px">
+    <button id="newnote">+ New Note</button>
+    <a href="javascript:recoverNote();">
+      <button id="recovernote">
+        <span style="color: #aaccff">Recover/Duplicate Notes</span>
+      </button>
+    </a>
+    <a href="javascript:deleteAllForever();">
+      <button id="deleteallforever">
+        <span style="color: #ff0000">Delete All Notes FOREVER</span>
+      </button>
+    </a>
+    &nbsp;
+    <div title="When you create, open, rename, or delete a note while editing another note, the current note will be saved and closed before performing the functions listed above. 
+      
+Unfortunately, this app might be completely broken. We are attempting to look into the issue." class="info">
+      i
+    </div>
+    <!--&nbsp;
+      <a href="javascript:recoverNote();">
+        <div title="Recover deleted notes" class="info" style="font-size: 10px;">&#128465;</div>
+      </a>-->
+  </div>
+  <br>
+  <br>
+  <table id="faketable">
+    <tr id="faketr">
+      <td id="faketd1">
+        <div style="height: 100%; overflow-y: auto">
+          <table id="realtable">
+            <thead>
+              <tr>
+                <th style="width: 70%; height: 0px"></th>
+                <th style="width: 30%; height: 0px"></th>
+              </tr>
+            </thead>
+            <tbody id="table"></tbody>
+            <tfoot>
+              <tr>
+                <th style="width: 70%; height: 0px"></th>
+                <th style="width: 30%; height: 0px"></th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </td>
+      <td id="faketd2">
+        <a id="savebutton" href="javascript:saveAndCloseNote();">&#8678;&nbsp;&nbsp;Save &amp; Close</a>
+        <textarea id="textarea"></textarea>
+      </td>
+    </tr>
+  </table>
+  <script>
+    /// replace the use of readOnly === false with display === block or something
+    document.getElementById("newnote").addEventListener("click", newNote);
+    
+    var notes;
+    var noteNames;
+
+    var saveButton;
+    var table;
+    var textarea;
+
+    function JavaSScript() {
+      if (localStorage.getItem("notes")) {
+        notes = JSON.parse(localStorage.getItem("notes"));
+      } else {
+        notes = [];
+      }
+      if (localStorage.getItem("notenames")) {
+        noteNames = JSON.parse(localStorage.getItem("notenames"));
+      } else {
+        noteNames = [];
+      }
+      saveButton = document.getElementById("savebutton");
+      table = document.getElementById("table");
+      if (localStorage.getItem("tablehtml")) {
+        table.innerHTML = localStorage.getItem("tablehtml");
+      } else {
+        newNote();
+      }
+      textarea = document.getElementById("textarea");
+      //otherNoClick = document.getElementById("othernoclick");
+    }
+
+    function LocalStorageIt() {
+      localStorage.setItem("notes", JSON.stringify(notes));
+      localStorage.setItem("notenames", JSON.stringify(noteNames));
+      localStorage.setItem("tablehtml", table.innerHTML);
+    }
+
+    /*function newNote() {
+      const note = window.open("", "", "popup,width=500,height=500");
+      note.document.write(`<!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width">
+          <title>New Note</title>
+          <link href="style.css" rel="stylesheet" type="text/css">
+        </head>
+        <body onunload="function(){
+          let confirm = confirm('Are you sure you want to close without saving?');
+          if (confirm === false) {
+            saveNewNote();
+          }
+        }">
+          <textarea autofocus id="noteArea" placeholder="New note"></textarea>
+          <button onclick="saveNewNote()">
+            <a href="javascript:window.close();">Save & Close</a>
+          </button>
+          <script src="script.js"><//script>
+          <script>
+            function saveNewNote() {
+              const noteArea = note.document.getElementById("noteArea");
+              notes.push(noteArea.value);
+              noteNames.push("Note " + (noteNames.length));
+              note.close();
+              newRow();
+            }
+          <//script>
+        </body>
+      </html>`);
+    }*/
+
+    function newNote() {
+      if (textarea.readOnly === false) {
+        saveAndCloseNote();
+      }
+      notes.push(textarea.value);
+      noteNames.push("New Note " + notes.length);
+      newRow();
+      openNote(notes.length - 1);
+    }
+
+    function openNote(n) {
+      if (textarea.readOnly === false) {
+        saveAndCloseNote();
+      }
+      textarea.readOnly = false;
+      textarea.placeholder = noteNames[n];
+      if (notes[n] !== undefined) {
+        textarea.value = notes[n];
+      }
+      /*table.style.pointerEvents = "none";
+      otherNoClick.style.pointerEvents = "none";*/
+      textarea.style.display = "table";
+      saveButton.style.display = "table";
+      document.getElementById("faketd1").style.width = "43%";
+      textarea.focus();
+    }
+
+    function saveAndCloseNote() {
+      notes[noteNames.indexOf(textarea.placeholder)] = `` + textarea.value + ``;
+      textarea.value = "";
+      textarea.placeholder = "";
+      /*table.style.pointerEvents = "auto";
+      otherNoClick.style.pointerEvents = "auto";*/
+      textarea.readOnly = true;
+      textarea.style.display = "none";
+      saveButton.style.display = "none";
+      document.getElementById("faketd1").style.width = "99%";
+    }
+
+    function newRow() {
+      const newTR = document.createElement("tr");
+      newTR.id = "tablerow" + (noteNames.length - 1);
+      const newNameTD = document.createElement("td");
+      newNameTD.id = "nametd" + (noteNames.length - 1);
+      newNameTD.innerHTML =
+        '<a href="javascript:openNote(' +
+        (noteNames.length - 1) +
+        ');">' +
+        noteNames[noteNames.length - 1] +
+        "</a>";
+      newNameTD.style.userSelect = "none";
+      const newButtonsTD = document.createElement("td");
+      newButtonsTD.class = "buttonstd";
+      newButtonsTD.style.width = "100%";
+      newButtonsTD.innerHTML =
+        '<div class="inbuttonstd"><a href="javascript:rename(' +
+        (noteNames.length - 1) +
+        ');"><button id="rename' +
+        (noteNames.length - 1) +
+        '">Rename</button></a><a href="javascript:deleter(' +
+        (noteNames.length - 1) +
+        ');"><button id="delete' +
+        (noteNames.length - 1) +
+        '"><span style="color: #ff0000;">Delete</span></button></a></div>';
+      table.appendChild(newTR);
+      newTR.appendChild(newNameTD);
+      newTR.appendChild(newButtonsTD);
+    }
+
+    function newRowSpecific(m) {
+      const newTR = document.createElement("tr");
+      newTR.id = "tablerow" + m;
+      const newNameTD = document.createElement("td");
+      newNameTD.id = "nametd" + m;
+      newNameTD.innerHTML =
+        '<a href="javascript:openNote(' + m + ');">' + noteNames[m] + "</a>";
+      newNameTD.style.userSelect = "none";
+      const newButtonsTD = document.createElement("td");
+      newButtonsTD.class = "buttonstd";
+      newButtonsTD.style.width = "100%";
+      newButtonsTD.innerHTML =
+        '<div class="inbuttonstd"><a href="javascript:rename(' +
+        m +
+        ');"><button id="rename' +
+        m +
+        '">Rename</button></a><a href="javascript:deleter(' +
+        m +
+        ');"><button id="delete' +
+        m +
+        '"><span style="color: #ff0000;">Delete</span></button></a></div>';
+      table.appendChild(newTR);
+      newTR.appendChild(newNameTD);
+      newTR.appendChild(newButtonsTD);
+    }
+
+    function rename(j) {
+      if (textarea.readOnly === false) {
+        saveAndCloseNote();
+      }
+      let newName = prompt(
+        'What would you like to rename "' + noteNames[j] + '" to?'
+      );
+      if (newName !== null && newName !== "") {
+        noteNames[j] = newName;
+        document.getElementById("nametd" + j).innerHTML =
+          '<a href="javascript:openNote(' + j + ')">' + newName + "</a>";
+      }
+    }
+
+    function deleter(i) {
+      if (textarea.readOnly === false) {
+        saveAndCloseNote();
+      }
+      let oneUnderscoreVariable = confirm(
+        'Are you sure you want to delete "' + noteNames[i] + '"?'
+      );
+      if (oneUnderscoreVariable === true) {
+        /*notes.splice(i, 1);
+        noteNames.splice(i, 1);*/
+        const toRemove = document.getElementById("tablerow" + i);
+        table.removeChild(toRemove);
+        /*const DBAfterRemoved = document.getElementById("delete" + (i + 1));
+        DBAfterRemoved.id = "delete" + i;
+        const TRAfterRemoved = document.getElementById("tablerow" + (i + 1));
+        TRAfterRemoved.id = "tablerow" + i;
+        const RBAfterRemoved = document.getElementById("rename" + (i + 1));
+        RBAfterRemoved.id = "rename" + i;*/
+      } else {
+        return;
+      }
+    }
+
+    function recoverNote() {
+      if (textarea.readOnly === false) {
+        saveAndCloseNote();
+      }
+      let Pascalcase = prompt(
+        "Type in the name of the note you want to recover/duplicate:\n\n" +
+        noteNames.join("\n")
+      );
+      if (Pascalcase !== null && Pascalcase !== "") {
+        if (noteNames.indexOf(Pascalcase + "") !== -1) {
+          newRowSpecific(noteNames.indexOf(Pascalcase + ""));
+        }
+      } else {
+        return;
+      }
+    }
+
+    function deleteAllForever() {
+      if (textarea.readOnly === false) {
+        saveAndCloseNote();
+      }
+      var confirm1 = confirm(
+        "Are you sure you want to permanently delete all of your notes? You will never, ever be able to access them ever again. (This is the first chance of five that you have to cancel.)"
+      );
+      if (confirm1 === true) {
+        var confirm2 = confirm("Are you really sure?");
+        if (confirm2 === true) {
+          var confirm3 = confirm("Are you really, really sure?");
+          if (confirm3 === true) {
+            var confirm4 = confirm("Are you REALLY, REALLY, REALLY sure?");
+            if (confirm4 === true) {
+              var confirm5 = confirm(
+                "Last chance to cancel! Are you REALLY, REALLY, REALLY, REALLY sure?"
+              );
+              if (confirm5 === true) {
+                notes = [];
+                noteNames = [];
+                table.innerHTML = "";
+                LocalStorageIt();
+              }
+            }
+          }
+        }
+      } else {
+        return;
+      }
+    }
+
+  </script>
+</body>
+
+</html>

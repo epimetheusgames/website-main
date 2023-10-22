@@ -1,0 +1,21 @@
+html, body {
+  cursor: auto;
+}
+
+@keyframes cursor {
+  0% {
+    cursor: url("/assets/cursors/cur-progress/cur-progress-1.png"), wait;
+  }
+  25% {
+    cursor: url("/assets/cursors/cur-progress/cur-progress-2.png"), wait;
+  }
+  50% {
+    cursor: url("/assets/cursors/cur-progress/cur-progress-3.png"), wait;
+  }
+  75% {
+    cursor: url(/assets/cursors/cur-progress/cur-progress-4.png), wait;
+  }
+  100% {
+    cursor: url("/assets/cursors/cur-progress/cur-progress-1.png"), wait;
+  }
+}

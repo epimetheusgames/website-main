@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Videos | Epimetheus Games</title>
+	<link rel="icon" href="https://home.epimetheusgames.repl.co/assets/unused/logo(bad).png">
+	<link rel="stylesheet" type="text/css" href="https://home.epimetheusgames.repl.co/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="alignitems">
+		<img src="https://home.epimetheusgames.repl.co/assets/favicons/logo.png" alt="Logo">
+		<nav>
+			<a href="http://home.epimetheusgames.repl.co">
+				<h1>Epimetheus Games</h1>
+			</a>
+      <div id="basicallyborder"></div>
+      <table>
+        <tr>
+          <td>
+            <a href="../">Home</a>
+          </td>
+          <td>
+            <a href="../games">Games</a>
+          </td>
+          <td>
+            <a href="../videos/">Videos</a>
+          </td>
+          <td class="rightmosttd">
+            <a href="../blog/">Blog</a>
+          </td>
+        </tr>
+      </table>
+		</nav>
+	</div>
+	<h2>Videos</h2>
+  <h3><a href="https://www.youtube.com/@EpimetheusGamesOGPC?sub_confirmation=1" target="_blank">Subscribe to our YouTube channel</a></h3>
+	<div id="eyesore" class="page">
+		<h3><span class="eyesorelogo">EyeSore</span> Videos</h3>
+		<p>Trailer</p>
+		<video width="80%" height="45%" controls>
+			<source src="../assets/videos/trailer.mp4" type="video/mp4">
+			Your browser can't play this video.
+		</video>
+		<p>Making Of</p>
+		<video width="80%" height="45%" controls>
+			<source src="../assets/videos/makingof.mp4" type="video/mp4">
+      <div style="position:relative;width:fit-content;height:fit-content;">
+            <a style="position:absolute;top:20px;right:1rem;opacity:0.8;" href="https://clipchamp.com/watch/EyiSJnnrVoU?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+                <img style="height:22px;" src="https://clipchamp.com/e.svg" alt="Made with Clipchamp">
+            </a>
+            <iframe allow="autoplay;" allowfullscreen style="border:none" src="https://clipchamp.com/watch/EyiSJnnrVoU/embed" width="640" height="360"></iframe>
+          </div>
+			Your browser can't play this video.
+		</video>
+	</div>
+	<hr>
+	<footer>
+    <p class="ten">
+      <!-- 🄯 --><img src="../assets/favicons/logo.png" alt="🄯" style="width: 13px; height: 10px; position: relative; top: 1px;">
+      Epimetheus Games 2023 | <a href="http://home.epimetheusgames.repl.co">Home</a> | <a href="devlogin">devLogin</a> |
+      <a href="../videos/">Videos</a> | <a href="../blog/">Blog</a> | <a href="../why/">why</a>
+    </p>
+    <br><br>
+    <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+  </footer>
+    <script>
+    let toTopButton = document.getElementById("topBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        toTopButton.style.display = "block";
+      } else {
+        toTopButton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+</body>
+</html>
