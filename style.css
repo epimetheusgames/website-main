@@ -59,12 +59,14 @@ body {
 
 .alignitems {
   background-color: #292929;
+  z-index: 85;
   border-radius: 50px;
   width: 99%;
   min-width: 1330px;
   display: flex;
   align-items: center;
 }
+/* sticky navbar is a separate thing below with same border radius, blue?, z-index: 80; */
 
 .page {
   margin-bottom: 100px;
