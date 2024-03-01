@@ -354,7 +354,7 @@ nav {
   transition: all 0.1s ease-in-out, display 0.4s ease-in-out;
   /* Adds smooth transitions */
   box-shadow: 3px 2px 22px 1px rgba(40, 40, 40, 0.24);
-  font-family: 'Nixie One', cursive;
+  font-family: 'Nixie One', 'Courier New', Courier, monospace;
 }
 
 #topBtn:hover {
