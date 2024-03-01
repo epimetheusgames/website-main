@@ -80,7 +80,7 @@ body {
 
 .eyesorelogo {
   text-shadow: 0 0 15px #ffffff, 0 0 25px #1dc31d, 0 0 35px #1dc31d, 0 0 45px #1dc31d, 0 0 55px #1dc31d, 0 0 65px #1dc31d, 0 0 75px #1dc31d; 
-  font-family: 'Nixie One', cursive;
+  font-family: 'Nixie One', 'Courier New', Courier, monospace;
   font-size: 60px;
   letter-spacing: 12px;
   font-weight: 300;
