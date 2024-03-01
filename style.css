@@ -369,5 +369,5 @@ nav {
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.1);
   background-color: #171717;
   border-radius: 5px;
-  /* Add a lighter gray background on hover */
+  /* Add a darker gray background on focus */
 }
