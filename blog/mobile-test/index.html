@@ -3,7 +3,7 @@
 	<head>
 		<title>Epimetheus Games</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="favicon" href="/assets/favicons/favicon.png">
+		<link rel="favicon" href="https://epimetheusgames.onrender.com/assets/favicons/favicon.png">
 		<style>
 			body {
 				background-color: black;
@@ -23,27 +23,42 @@
 				padding: 5% 0 5% 5%;
 				display: flex;
 			}
-			#top {
-				width: 40%;
-                height: 40%;
-			}
-			#top img {
-				max-width: 100%;
-			}
-			#top h1 {
-				display: none;
-			}
-			nav {
-				display: block;
-				width: 60%;
-			}
-			.navbutton {
-				width: 99%;
-				height: 25%;
-				padding: 2px;
-				font-size: 24px;
-				text-align: center;
-				color: white;
+
+			/* Mobile */
+				#top {
+					width: 40%;
+					height: 40%;
+				}
+				#top img {
+					max-width: 100%;
+				}
+				#top h1 {
+					display: none;
+				}
+				#container nav {
+					display: block;
+					width: 60%;
+				}
+				.navbutton {
+					width: 99%;
+					height: 25%;
+					padding: 2px;
+					font-size: 24px;
+					text-align: center;
+					color: white;
+				}
+			
+			@media only screen and (min-width: 768px) { /* Desktop */
+				#top h1 {
+					display: initial;
+					
+				}
+				#container nav {
+					width: 100%;
+				}
+				#container nav a {
+					width: 25%
+				}
 			}
 		</style>
 	</head>
