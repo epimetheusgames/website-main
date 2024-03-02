@@ -3,7 +3,10 @@
 	<head>
 		<title>Epimetheus Games</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="favicon" href="https://epimetheusgames.onrender.com/assets/favicons/favicon.png">
+		<link rel="icon" href="https://epimetheusgames.onrender.com/assets/favicons/favicon.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 		<style>
 			body {
 				background-color: black;
@@ -49,9 +52,19 @@
 				}
 			
 			@media only screen and (min-width: 768px) { /* Desktop */
+				#top {
+					width: 100%;
+					height: auto;
+				}
+				#top img {
+					display: inline-block;
+					width: 30%;
+					height: auto;
+				}
 				#top h1 {
-					display: initial;
-					
+					display: inline-block;
+					width: 70%;
+					font-family: "Bungee", sans-serif;
 				}
 				#container nav {
 					width: 100%;
