@@ -4,7 +4,7 @@ body {
   width: 99%;
   font-family: sans-serif;
   color: #ebebff;
-  background-color: #121212; /* DO NOT CHANGE THIS */
+  background-color: #121212; /* DO NOT CHANGE THIS */ /* eh you probably can */
   text-align: center;
   /* overflow: hidden; */
   cursor: url("/assets/cursors/cur-default.png"), auto;
@@ -66,7 +66,7 @@ body {
   display: flex;
   align-items: center;
 }
-/* sticky navbar is a separate thing below with same border radius, blue?, z-index: 80; */
+/* sticky navbar is a separate thing below with same border radius, dark grey-ish blue?, z-index: 80; */
 
 .page {
   margin-bottom: 100px;
@@ -271,7 +271,7 @@ button {
   border: 2px solid #ebebff;
   border-radius: 5px;
   padding: 5px;
-  cursor: url("/assets/cursors/cur-pointer.png");
+  cursor: url("/assets/cursors/cur-pointer.png"), pointer;
 }
 
 button:hover {
@@ -283,7 +283,7 @@ nav h1 {
   color: #ffffff;
   font-size: 90px;
   margin-left: 10%;
-  font-family: "Bungee";
+  font-family: "Bungee"; /* Poppins */
   font-weight: 650;
   letter-spacing: 4px;
   text-align: left;
