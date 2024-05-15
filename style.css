@@ -3,7 +3,7 @@ body {
   height: 100%;
   width: 99%;
   font-family: sans-serif;
-  color: #ebebff;
+  color: #fbfbff;
   background-color: #121212; /* DO NOT CHANGE THIS */ /* eh you probably can */
   text-align: center;
   /* overflow: hidden; */
@@ -32,7 +32,7 @@ body {
   border: 2px solid #000000;
   border-radius: 5px;
   background-color: #05b411;
-  color: #ebebff;
+  color: #fbfbff;
   margin: 5px;
   font-size: 24px;
   padding: 6px;
@@ -148,7 +148,7 @@ nav table {
   left: 100px;
   width: calc(99% - 210px);
   min-width: 1120px;
-  border-top: 2px solid #ebebff;
+  border-top: 2px solid #fbfbff;
   border-collapse: collapse;
 }
 
@@ -160,7 +160,7 @@ nav td {
 }
 
 nav td:not(.rightmosttd) {
-  border-right: 2px solid #ebebff;
+  border-right: 2px solid #fbfbff;
 }
 
 nav td:hover {
@@ -170,7 +170,7 @@ nav td:hover {
 a {
   color: #abcdef;
   /* background-color: #2b3553;
-  border: 1px solid #ebebff;
+  border: 1px solid #fbfbff;
   padding: 2px;
   border-radius: 5px; */
 }
@@ -181,9 +181,9 @@ a:hover {
 }
 
 nav a, table a, nav a:hover, table a:hover, a h3 {
-  color: #ebebff;
+  color: #fbfbff;
   cursor: url("/assets/cursors/cur-pointer.png"), pointer;
-  text-decoration-color: #ebebff;
+  text-decoration-color: #fbfbff;
   text-decoration: none;
 }
 
@@ -220,8 +220,8 @@ p {
 }
 
 hr {
-  background-color: #ebebff;
-  border-color: #ebebff;
+  background-color: #fbfbff;
+  border-color: #fbfbff;
 }
 
 h2 {
@@ -253,7 +253,7 @@ img {
 }
 
 .blogentry {
-  border: 2px solid #ebebff;
+  border: 2px solid #fbfbff;
   border-left: none;
   background-color: #35353F;
   margin-bottom: 30px;
@@ -266,9 +266,9 @@ img {
 
 button {
   font-size: 24px;
-  color: #ebebff;
+  color: #fbfbff;
   background-color: #000000;
-  border: 2px solid #ebebff;
+  border: 2px solid #fbfbff;
   border-radius: 5px;
   padding: 5px;
   cursor: url("/assets/cursors/cur-pointer.png"), pointer;
@@ -276,7 +276,7 @@ button {
 
 button:hover {
   background-color: #0A0A0A;
-  border: 3px solid #ebebff;
+  border: 3px solid #fbfbff;
 }
 
 nav h1 {
@@ -347,7 +347,7 @@ nav {
   /* Remove outline */
   background-color: #2e2e2e;
   /* Set a background color */
-  color: #ebebff;
+  color: #fbfbff;
   /* Text color */ 
   cursor: url("/assets/cursors/cur-pointer.png"), pointer;
   /* Add a mouse pointer on hover */
