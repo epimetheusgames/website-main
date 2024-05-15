@@ -139,7 +139,7 @@ body {
   position: absolute;
   top: 317px;
   left: 14px;
-  border-top: 2px solid white;
+  border-top: 2px solid #fbfbff;
 }
 
 nav table {
@@ -168,7 +168,7 @@ nav td:hover {
 }
 
 a {
-  color: #abcdef;
+  color: #8085ff;
   /* background-color: #2b3553;
   border: 1px solid #fbfbff;
   padding: 2px;
@@ -272,6 +272,7 @@ button {
   border-radius: 5px;
   padding: 5px;
   cursor: url("/assets/cursors/cur-pointer.png"), pointer;
+  transition: all ease-in-out 0.3s;
 }
 
 button:hover {
@@ -280,7 +281,7 @@ button:hover {
 }
 
 nav h1 {
-  color: #ffffff;
+  color: #fbfbff;
   font-size: 90px;
   margin-left: 10%;
   font-family: "Bungee"; /* Poppins */
