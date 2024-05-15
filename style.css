@@ -246,6 +246,7 @@ a h4 {
 .teamimages {
   border-radius: 10px;
   border: 4px solid black;
+  margin-top: 10px;
 }
 
 img {
