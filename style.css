@@ -93,6 +93,7 @@ body {
   width: 240px;
   height: 240px;
   margin-left: 50px;
+  margin-top: 0;
 }
 
 .page table {
@@ -285,9 +286,9 @@ nav h1 {
   color: #fbfbff;
   font-size: 90px;
   margin-left: 10%;
+  margin-top: -10px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  letter-spacing: 4px;
   text-align: left;
 }
 
