@@ -285,8 +285,8 @@ nav h1 {
   color: #fbfbff;
   font-size: 90px;
   margin-left: 10%;
-  font-family: "Bungee"; /* Poppins */
-  font-weight: 650;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   letter-spacing: 4px;
   text-align: left;
 }
