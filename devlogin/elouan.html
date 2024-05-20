@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Epimetheus Games Updates</title>
+  </head>
+  <body class="container mt-5">
+    <h1>Epimetheus Games Updates</h1>
+    <br>
+    <form onsubmit="sendUpdate(event)">
+      <div class="mb-3">
+        <label for="titleInput" class="form-label">Title</label>
+        <textarea class="form-control" id="titleInput" rows="1"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Message</label>
+        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    <script>
+      async function sendUpdate(ev) {
+        ev.preventDefault();
+
+        const senderTitle = document
+          .getElementById('titleInput').value;
+        const senderMessage = document
+          .getElementById('messageInput').value;
+
+        const webhookBody = {
+          embeds: [{
+            title: "**" + senderTitle + "**",
+            description: senderMessage
+          }],
+        };
+
+        const webhookUrl = 'https://discord.com/api/webhooks/1241763799254700072/mwKjG3Izs9OhkHhwR27xvhGCKm1fHe9xoQ9iTFVPDxWTf8Tw_8iritPRYFlvY2x0hWgO';
+
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(webhookBody),
+        });
+
+        if (response.ok) {
+          alert('Update Sent');
+        } else {
+          alert('There was an error! Try again later!');
+        }
+      }
+    </script>
+  </body>
+</html>
