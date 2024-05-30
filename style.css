@@ -250,6 +250,11 @@ a h4 {
   margin-top: 10px;
 }
 
+.teammember {
+  float: left;
+  padding: 10px;
+}
+
 img {
   border-radius: 10px;
 }
