@@ -265,7 +265,7 @@ a h4 {
 
 .teammember {
   padding: 10px;
-  display: flex;
+  width: fit-content;
 }
 
 img {
