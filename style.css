@@ -266,10 +266,8 @@ a h4 {
 
 .teammember {
   padding: 40px;
-  width: fit-content;
-}
-
-.teammember p {
+  width: 220px;
+  max-width: fit-content;
   overflow-wrap: anywhere;
 }
 
