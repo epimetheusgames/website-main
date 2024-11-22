@@ -8,6 +8,8 @@ body {
   text-align: center;
   /* overflow: hidden; */
   cursor: url("/assets/cursors/cur-default.png"), auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 [title] {
