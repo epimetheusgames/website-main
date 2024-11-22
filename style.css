@@ -218,6 +218,11 @@ a h4 {
   overflow-wrap: anywhere;
 }
 
+.promoimage {
+  border-radius: 10px;
+  border: 4px solid black;
+}
+
 img {
   border-radius: 10px;
 }
