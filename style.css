@@ -18,6 +18,113 @@ body {
   width: 80%;
 }
 
+/* New navbar 
+/* Mobile *
+  #container {
+    width: calc(100% - 20px);
+    background-color: #393939;
+    border-radius: 30px;
+    padding: 10px;
+    overflow: hidden;
+  }
+  #left {
+    width: 40%;
+    float: left;
+  }
+  #left img {
+    padding: 10px;
+    max-width: 100%;
+    max-height: 176px;
+    height: 100%;
+    width: auto;
+  }
+  #right {
+    float: right;
+    width: 60%;
+  }
+  #right h1 {
+    display: none;
+  }
+  #right nav {
+    width: 100%;
+    height: 100%;
+  }
+  #right nav ul {
+    list-style-type: none;
+      margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  #right nav ul li {
+    width: 99%;
+    height: 25%;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    color: #fbfbff;
+    /* border-bottom: 1px solid #fbfbff;
+  }
+  #right nav ul li:last-child {
+    border: none; *
+  }
+
+/* I will add a specific style for tablets at a later date*
+
+/* Desktop *
+@media only screen and (min-width: 800px) {
+  body {
+    padding: 10px;
+  }
+  #container {
+    width: calc(100% - 20px);
+  }
+  #left {
+    float: left;
+    width: 210px;
+  }
+  #left img {
+    width: 200px;
+    height: auto;
+    max-height: 100%;
+    margin-left: 10px;
+  }
+  #right {
+    float: right;
+    width: calc(100% - 210px);
+  }
+  #right h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    display: block;
+    text-align: left;
+    padding-left: 9%;
+    font-size: 60px;
+  }
+  #right nav {
+    width: 100%;
+    /* position: sticky;
+    top: 0; *
+    overflow-x: hidden;
+    overflow-wrap: normal;
+  }
+  #right nav ul {
+    width: 150%;
+  }
+  #right nav ul li {
+    padding: 0 10px;
+    margin: auto 0 0 0;
+    width: 15%;
+    float: left;
+    margin: 0;
+    border-bottom: none;
+    border-right: 1px solid #fbfbff;
+  }
+  #right nav ul li:last-child {
+    border: none;
+  }
+}
+*/
+
 /* navbar related */ .alignitems {
   background-color: #292929;
   z-index: 85;
