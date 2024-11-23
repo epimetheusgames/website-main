@@ -258,6 +258,7 @@ p {
   font-size: 20px;
   cursor: url("/assets/cursors/cur-text.png"), text;
   max-width: 90%;
+  margin-left: 5%;
 }
 
 #eyesore img {
