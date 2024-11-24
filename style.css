@@ -14,10 +14,6 @@ body {
   cursor: url("/assets/cursors/cur-help.png"), help;
 }
 
-.subhr {
-  width: 80%;
-}
-
 /* navbar related */ .alignitems {
   background-color: #292929;
   z-index: 85;
@@ -268,7 +264,7 @@ p {
 }
 
 #eyesore,
-#team {
+.team {
   text-align: center;
 }
 
@@ -296,7 +292,7 @@ a h4 {
   cursor: url("/assets/cursors/cur-pointer.png"), pointer;
 }
 
-#team {
+.team {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -321,6 +317,10 @@ a h4 {
   width: 220px;
   max-width: fit-content;
   overflow-wrap: anywhere;
+}
+
+.subhr {
+  width: 80%;
 }
 
 .promoimage {
