@@ -243,6 +243,10 @@ video {
   font-weight: 400;
 }
 
+li.twentyfour {
+  font-size: 20px;
+}
+
 .ten,
 .ten a {
   font-size: 10px;
