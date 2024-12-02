@@ -133,7 +133,7 @@ body {
 /* I will add a specific style for tablets at a later date*/
 
 /* Desktop */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 850px) {
   #container {
     width: calc(100% - 20px);
   }
