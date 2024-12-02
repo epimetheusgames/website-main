@@ -159,9 +159,9 @@ body {
     padding-left: 9%;
     font-size: 60px;
   }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 920px) {
     #right h1 {
-      font-size: 6.6vw;
+      font-size: 6.5vw;
     }
   }
   #right nav {
