@@ -78,6 +78,7 @@
                 </div>
                 <p><a href="#flyinggoosemerger"><i>Alejandro B: </i>Epimetheus Games Merging With Flying Goose Games</a></p>
                 <p><a href="#divinggame"><i>Carson B: </i>We're Making a Diving Game!</a></p>
+                <p><a href="#fishboids"><i>Carson B: </i>Creating Large Swarms of Fish</a></p>
             </div>
         </div>
     </div>
@@ -327,6 +328,21 @@
             <p class="twentyfour">Here's an image of a prototype we have so far!</p>
             <img src="/assets/screenshots/divinggame1.png" alt="An early prototype of the diving game we are making.">
             <p class="twentyfour">Stay tuned for blog posts about the technical aspects of different things we implement, and for new features we plan to add to the game! We look forward to a great season of OGPC this year, and are very interested to see how other teams will interpret the theme of Extreme Weather!</p>
+        </div>
+        <div class="blogentry">
+            <h4 id="fishboids"><i>Creating Large Swarms of Fish</i></h4>
+            <p><i>By Carson B: December 23, 2024</i></p>
+            <p>This blog post is going to cover my process for creating large swarms of fish for our game. In the ocean, there are many types of fish that create large schools. The reason for this is usually for safety and for finding food. Interestingly, schooling can <a href="https://www.aqueon.com/articles/schooling-fish">improve the hydrodynamics</a> of the fish, although I don't really understand why.</p>
+            <p>The main topic of this blog post is going to explore the technical side of creating performant large swarms of fish. </p>
+            <p>Often in computing we find that extremely simple sets of rules (such as Conway's Game of Life or the Mandelbrot Set) can create extremely complex and beautiful outcomes at a high level. There exists an algorithm called Boids invented by Craig Reynolds which was created to simulate the flocking behavior of birds, but it can also be applied to fish. There are three rules that boids follow (Separation, Alignment, and Cohesion) but I'm not going to explain them all in great detail here.
+            </p>
+            <p>In its simplest form the boids algorithm possesses an inherent inefficiency as its time complexity is O(n2). Each boid has to check against every other boid. My solution to this is running the boids on the GPU via a compute shader. First I'll get into why that's better in terms of efficiency, and then I'll talk about why it's not the best. </p>
+            <p>Firstly, the GPU is massively parallelized, which means that we can rewrite our code to run one boid on each GPU process. This means that the time complexity for one process is O(n) and because all the processes are parallelized the time complexity stays at O(n) for the entire boids simulation. Unfortunately, it's not quite that simple because we can't just run infinite processes, there's a limit. This means our time complexity is still linear but can be more precisely defined as O(n/m) where m is the number of processes that can be run at once. On my machine that's 512.</p>
+            <p>Now it's safe to say that at this point the boid simulation is very efficient and is certainly not the bottleneck anymore. The main problem is that in order to make the boids avoid walls I have two choices: Figure out how to get Godot's signed distance field into the compute shader, or suck up the performance cost and do a thousand raycasts on the CPU (in the main thread). So I chose the latter.</p>
+            <p>Another bottleneck in this code is waiting for the GPU to process all the data and get it back to the CPU, which stalls the main thread. The best solution to this would probably be to rewrite everything as a particle shader, but I decided to go with the naïve solution which was to move the compute shader initialization to a separate thread, which luckily works with Godot. This was surprisingly easy to make, and I don't have much to say about it. </p>
+            <p>And with all that, I was able to create cool-looking stuff like this:</p>
+            <img src="/assets/screenshots/divinggameboids.png">
+            <p>Overall this was very fun to make and I think it will add a bit more life and wonder into the game. There are certainly some areas for improvement (for example compute shaders don't even work with GLSL), but I think it's good enough that it can be used in the game.</p>
         </div>
     </div>
     <hr>
