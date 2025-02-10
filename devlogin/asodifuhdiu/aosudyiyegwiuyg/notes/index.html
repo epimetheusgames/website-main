@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Notes</title>
-  <link href="../../../../assets/favicons/notesFavicon.png" rel="icon">
+  <link href="notesFavicon.png" rel="icon">
   <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
   <style>
     html,
@@ -169,7 +169,7 @@
   </style>
 </head>
 
-<body onload="JavaSScript()" onbeforeunload="LocalStorageIt()">
+<body> <!-- onload="JavaSScript()" onbeforeunload="LocalStorageIt()" -->
   <div class="alignitems">
     <img src="../../../../assets/favicons/logo.png" alt="Logo">
     <nav>
@@ -181,16 +181,16 @@
   <p></p>
   <div class="alignitems" style="background-color: #121212; padding: 3px">
     <button id="newnote">+ New Note</button>
-    <a href="javascript:recoverNote();">
+    <!-- <a href="javascript:recoverNote();"> -->
       <button id="recovernote">
         <span style="color: #aaccff">Recover/Duplicate Notes</span>
       </button>
-    </a>
-    <a href="javascript:deleteAllForever();">
+    <!-- </a> -->
+    <!-- <a href="javascript:deleteAllForever();"> -->
       <button id="deleteallforever">
         <span style="color: #ff0000">Delete All Notes FOREVER</span>
       </button>
-    </a>
+    <!-- </a> -->
     &nbsp;
     <div title="When you create, open, rename, or delete a note while editing another note, the current note will be saved and closed before performing the functions listed above. 
       
@@ -226,21 +226,21 @@ Unfortunately, this app might be completely broken. We are attempting to look in
         </div>
       </td>
       <td id="faketd2">
-        <a id="savebutton" href="javascript:saveAndCloseNote();">&#8678;&nbsp;&nbsp;Save &amp; Close</a>
+        <a id="savebutton">&#8678;&nbsp;&nbsp;Save &amp; Close</a> <!-- href="javascript:saveAndCloseNote();" -->
         <textarea id="textarea"></textarea>
       </td>
     </tr>
   </table>
   <script>
     /// replace the use of readOnly === false with display === block or something
-    document.getElementById("newnote").addEventListener("click", newNote);
-    
-    var notes;
-    var noteNames;
+
+    // variables
+    var notes = [];
+    var noteNames = [];
 
     var saveButton;
     var table;
-    var textarea;
+    var textarea = document.getElementById("textarea");
 
     function JavaSScript() {
       if (localStorage.getItem("notes")) {
@@ -260,7 +260,7 @@ Unfortunately, this app might be completely broken. We are attempting to look in
       } else {
         newNote();
       }
-      textarea = document.getElementById("textarea");
+      
       //otherNoClick = document.getElementById("othernoclick");
     }
 
@@ -483,6 +483,16 @@ Unfortunately, this app might be completely broken. We are attempting to look in
         return;
       }
     }
+
+    // event listeners
+    window.addEventListener("load", function() {
+        JavaSScript();
+        document.getElementById("newnote").addEventListener("click", newNote);
+        document.getElementById("recovernote").addEventListener("click", recoverNote);
+        document.getElementById("deleteallforever").addEventListener("click", deleteAllForever);
+        document.getElementById("savebutton").addEventListener("click", saveAndCloseNote);
+        window.addEventListener("beforeunload", LocalStorageIt);
+    });
 
   </script>
 </body>
