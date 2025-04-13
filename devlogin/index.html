@@ -3,27 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>devLogin</title>
+    <title>Developer Login | Epimetheus Games</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <style>
-      html, body {
-        cursor: auto;
-      }
-
       @keyframes cursor {
         0% {
-          cursor: url("/assets/cursors/cur-progress/cur-progress-1.png"), wait;
+          cursor: url("../assets/cursors/cur-progress/cur-progress-1.png"), wait;
         }
         25% {
-          cursor: url("/assets/cursors/cur-progress/cur-progress-2.png"), wait;
+          cursor: url("../assets/cursors/cur-progress/cur-progress-2.png"), wait;
         }
         50% {
-          cursor: url("/assets/cursors/cur-progress/cur-progress-3.png"), wait;
+          cursor: url("../assets/cursors/cur-progress/cur-progress-3.png"), wait;
         }
         75% {
-          cursor: url("/assets/cursors/cur-progress/cur-progress-4.png"), wait;
+          cursor: url("../assets/cursors/cur-progress/cur-progress-4.png"), wait;
         }
         100% {
-          cursor: url("/assets/cursors/cur-progress/cur-progress-1.png"), wait;
+          cursor: url("../assets/cursors/cur-progress/cur-progress-1.png"), wait;
         }
       }
     </style>
@@ -49,10 +46,10 @@
       function checkPw() {
         switch (passwordd.value + "") {
           case "AccessAcademy":
-            window.location.href = "/devlogin/asodifuhdiu/aosudyiyegwiuyg/";
+            window.location.href = "../devlogin/asodifuhdiu/aosudyiyegwiuyg/";
             break;
           case "LOL_BEANS_DOT_EYE_OH":
-            window.location.href = "/devlogin/asodifuhdiu/aosudyiyegwiuyg/notes/";
+            window.location.href = "../devlogin/asodifuhdiu/aosudyiyegwiuyg/notes/";
             break;
           default:
             alert(
@@ -69,6 +66,21 @@
     </script>
   </head>
   <body>
+    <div id="container">
+      <div id="left">
+        <img src="../assets/favicons/logo.png" alt="Logo">
+      </div>
+      <div id="right">
+        <h1>Epimetheus&nbsp;Games</h1>
+        <nav><ul style="list-style: none;">
+          <li><a href="../">Home</a></li>
+          <li><a href="../games">Games</a></li>
+          <li><a href="../videos">Videos</a></li>
+          <li><a href="../blog">Blog</a></li>
+        </ul></nav>
+      </div>
+    </div>
+    <h2>Developer Login</h2>
     <input type="password" id="password" placeholder="password">
     <button id="submit" onclick="startCheck()">submit</button>
     <script src="/script.js"></script>
