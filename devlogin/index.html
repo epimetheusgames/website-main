@@ -24,7 +24,35 @@
         }
       }
     </style>
-    <script defer>
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <img src="../assets/favicons/logo.png" alt="Logo">
+      </div>
+      <div id="right">
+        <h1>Epimetheus&nbsp;Games</h1>
+        <nav><ul style="list-style: none;">
+          <li><a href="../">Home</a></li>
+          <li><a href="../games">Games</a></li>
+          <li><a href="../videos">Videos</a></li>
+          <li><a href="../blog">Blog</a></li>
+        </ul></nav>
+      </div>
+    </div>
+    <h2>Developer Login</h2>
+    <input type="password" id="password" placeholder="password">
+    <button id="submit" onclick="startCheck()">submit</button>
+    <footer>
+      <p class="ten">
+        <!-- 🄯 --><img src="https://epimetheus.games/assets/favicons/logo.png" alt="🄯"
+          style="width: 13px; height: 10px; position: relative; top: 1px;">
+        Epimetheus Games 2023-2024 | <a href="https://epimetheus.games/">Home</a> | <a href="https://epimetheus.games/devlogin/">Developer Login</a> | <a href="https://epimetheus.games/games/">Games</a> | 
+        <a href="https://epimetheus.games/videos/">Videos</a> | <a href="https://epimetheus.games/blog/">Blog</a> | <a href="https://epimetheus.games/why/">why</a>
+      </p>
+      <br><br>
+    </footer>
+    <script>
       const passwordd = document.getElementById("password");
       const submit = document.getElementById("submit");
 
@@ -64,25 +92,5 @@
         HTML.title = "";
       }
     </script>
-  </head>
-  <body>
-    <div id="container">
-      <div id="left">
-        <img src="../assets/favicons/logo.png" alt="Logo">
-      </div>
-      <div id="right">
-        <h1>Epimetheus&nbsp;Games</h1>
-        <nav><ul style="list-style: none;">
-          <li><a href="../">Home</a></li>
-          <li><a href="../games">Games</a></li>
-          <li><a href="../videos">Videos</a></li>
-          <li><a href="../blog">Blog</a></li>
-        </ul></nav>
-      </div>
-    </div>
-    <h2>Developer Login</h2>
-    <input type="password" id="password" placeholder="password">
-    <button id="submit" onclick="startCheck()">submit</button>
-    <script src="/script.js"></script>
   </body>
 </html>
